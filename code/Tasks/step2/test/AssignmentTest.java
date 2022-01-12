@@ -126,7 +126,13 @@ class AssignmentTest {
         assignment.printAllStringsNotCoronaCaseInsensitive(strings);
         assertEquals("Thesearefuntimes!", outputStreamCaptor.toString().replaceAll("\\p{Cntrl}", ""));
     }
-
+    @Test
+    public void testCalculateHashStrength(){
+        int size = 36;
+        String pass = "12345678";
+        assertEquals(41,Math.round(assignment.bitstrength(36,"12345678")));
+        assertEquals(19,Math.round(assignment.bitstrength(26,"1234")));
+    }
 
 
 }
