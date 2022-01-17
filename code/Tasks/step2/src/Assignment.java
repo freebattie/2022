@@ -55,10 +55,12 @@ public class Assignment {
     public void printFirstSentence(char[] chars) {
 
         for (char x :chars){
+
             System.out.print(x);
             if (x == '.'){
                 break;
             }
+
 
         }
     }
@@ -128,6 +130,7 @@ public class Assignment {
      */
     public int firstOccurrence(String string, char c){
         char [] letters = string.toCharArray();
+        string.lastIndexOf("a");
         for (int i = 0; i <letters.length;i++){
 
             if (letters[i] == c){
