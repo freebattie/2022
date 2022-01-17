@@ -129,15 +129,8 @@ public class Assignment {
      * Returns -1 if char is not found.
      */
     public int firstOccurrence(String string, char c){
-        char [] letters = string.toCharArray();
-        string.lastIndexOf("a");
-        for (int i = 0; i <letters.length;i++){
+        return string.indexOf(c);
 
-            if (letters[i] == c){
-                return i;
-            }
-        }
-        return -1;
     }
 
     /**
