@@ -12,7 +12,8 @@ public class DebugClassConstructor {
     }
 
     public static void main(String[] args) {
-        DebugClassConstructor instance = new DebugClassConstructor();
+        DebugClassConstructor instance = new DebugClassConstructor()
+                ;
     }
 }
 
