@@ -4,7 +4,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Main {
+
     public static void main(String[] args) {
+
         TryCatchExample example = new TryCatchExample();
 //        example.runExample6();
         MultipleCatchExample multipleCatchExample = new MultipleCatchExample();
@@ -41,14 +43,14 @@ public class Main {
             e.printStackTrace();
         }*/
 
-/*        JavaLog javaLog = new JavaLog();
+       JavaLog javaLog = new JavaLog();
         try {
             javaLog.runExample();
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
 
-        LocalDateExample localDateExample = new LocalDateExample();
-        localDateExample.runExample();
+       // LocalDateExample localDateExample = new LocalDateExample();
+       // localDateExample.runExample();
     }
 }
