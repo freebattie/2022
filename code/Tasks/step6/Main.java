@@ -9,16 +9,21 @@ public class Main {
         // oppgave 4
         Program prg = new Program();
         prg.openFIle("D:\\Skole\\java\\github\\2022\\code\\Tasks\\step6","opg4");
-        prg.printFile();
+        //prg.printFile();
 
 
         //oppgave 5
        // prg.oppgave5();
 
         //oppgave 6
-        Artist art = new Artist("Bjarte",LocalDate.parse("1983-04-06"),"Ålesund","Norway");
-        art.printInfo();
+        Artist art = new Artist("Bjarte","1983-04-06","Ålesund","Norway");
+        //art.printInfo();
 
+
+        //oppgave7
+        prg.openFIle("D:\\Skole\\java\\github\\2022\\code\\Tasks\\step6","opg7");
+        //prg.printFile();
+        prg.oppgave7();
 
     }
 }

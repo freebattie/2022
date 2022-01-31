@@ -15,13 +15,47 @@ public class Artist {
     LocalDate dateOfBirth;
     String city;
     String country;
+    Artist(){
 
-    Artist(String artistName, LocalDate dateOfBirth, String city,String country){
+    }
+    Artist(String artistName, String dateOfBirth, String city,String country){
         this.artistName = artistName;
-        this.dateOfBirth = dateOfBirth;
+        this.dateOfBirth = LocalDate.parse(dateOfBirth);
         this.city = city;
         this.country = country;
 
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public String getArtistName() {
+        return artistName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public void printInfo(){

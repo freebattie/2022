@@ -14,6 +14,7 @@ public class Program {
     FileWriter fileWriter= null;
     private String path;
     private String name;
+    private ArrayList<Artist> artists = new ArrayList<>();
 
     private Scanner tryOpenFile(String path,String name){
         Scanner scanner=null;
@@ -109,6 +110,42 @@ public class Program {
 
         }
         return words;
+    }
+    public void oppgave7(){
+        this.artists= getAllArtistFromOpenFile();
+        printAllArtistFromList();
+
+    }
+
+    private void printAllArtistFromList() {
+        for (var art : artists){
+            art.printInfo();
+        }
+    }
+
+    private ArrayList<Artist> getAllArtistFromOpenFile() {
+        ArrayList<String> artist = new ArrayList<>();
+        ArrayList<Artist> tmpList = new ArrayList<>();
+        try {
+
+            while (scanner.hasNextLine()){
+                String line = scanner.nextLine();
+                if (line.equals("---")){
+                    Artist tmp = new Artist(artist.get(0),artist.get(1),artist.get(2), artist.get(3));
+                    tmpList.add(tmp);
+                    artist =  new ArrayList<>();
+                }
+                else {
+                    artist.add(line);
+                }
+            }
+        }
+        catch (Exception e){
+            System.out.println( e.getMessage());
+        }finally {
+            scanner.close();
+        }
+        return tmpList;
     }
 
     private void println(String s) {
