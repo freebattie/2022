@@ -21,7 +21,7 @@ public class Coin {
         Coin gold = new Coin(100);
 
         ArrayList<Coin> pouch = new ArrayList<>();
-
+            copper.getClass().getName();
         pouch.add(gold);
         pouch.add(silver);
         pouch.add(silver);
