@@ -1,3 +1,5 @@
+package Tasks.step9.template;
+
 import java.awt.*;
 
 public class Square extends Rectangle {

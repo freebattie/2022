@@ -14,6 +14,12 @@ public class Main {
 
         //Oppagve 3
         Circle sirkel1 = new Circle(1,3,4,5);
+        Circle sirkel2 = new Circle(1,3,new MovablePoint(2,3));
+
+
+
+
+
 
         //oppgave 4
 

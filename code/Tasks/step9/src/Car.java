@@ -58,7 +58,34 @@ public class Car {
         this.engine = electric ? new ElectricEngine() : new CombustionEngine();
     }
 }
+class Tesla extends Car{
 
+    Tesla(String name, String model, boolean electric) {
+        super(name, model, electric);
+    }
+}
+class Audi extends Car{
+
+    Audi(String name, String model, boolean electric) {
+        super(name, model, electric);
+    }
+}
+class Toyota extends Car{
+
+    Toyota(String name, String model, boolean electric) {
+        super(name, model, electric);
+    }
+
+}
+
+interface FuelBasedVehicle{
+     void fillTank();
+     void tankLevel();
+}
+interface ElectricBasedVehicle{
+    void chargeBattery();
+
+}
 abstract class Engine {
     boolean electric;
 

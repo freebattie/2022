@@ -10,6 +10,13 @@ public class Circle extends Shape {
     }
 
 
+    public Circle(int id, int radius,MovablePoint point) {
+        super(id);
+        this.radius = radius;
+        this.point = point;
+    }
+
+
 
     @Override
     public void area() {
