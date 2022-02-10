@@ -8,5 +8,5 @@ public abstract  class AbstractCoffeeMaker {
     public AbstractCoffeeMaker() {
         this.configMap = new HashMap<>();
     }
-
+    abstract Coffee brewCoffee(CoffeeType coffeeType) throws CoffeeException;
 }

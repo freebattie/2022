@@ -39,6 +39,7 @@ public class BasicCoffeeMaker extends AbstractCoffeeMaker{
     public Coffee brewFilterCoffee() throws CoffeeException{
        return  null;
     }
+    @Override
     public Coffee brewCoffee(CoffeeType coffeeType) throws CoffeeException {
 
         switch (coffeeType){
@@ -48,6 +49,7 @@ public class BasicCoffeeMaker extends AbstractCoffeeMaker{
                 throw new CoffeeException("Unexpected value: " + coffeeType);
         }
     }
+
     public ArrayList<Coffee> brewCoffee(CoffeeType coffeeType, int number) throws CoffeeException {
         ArrayList<Coffee> tmp = new ArrayList<>();
         for (int i = 0 ; i < number; i++){
