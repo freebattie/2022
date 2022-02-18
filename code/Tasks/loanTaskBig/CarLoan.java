@@ -7,6 +7,16 @@ public class CarLoan extends Loan{
     private String miles;
     InsuranceType typeOfInsurance;
 
+    public CarLoan(double loanAmount, int numberOfYears, LoanType loanType, double annualInterestRate, Date startDate, CustomerInfo loanTaker, String carModel, String miles, InsuranceType typeOfInsurance) {
+        super(loanAmount, numberOfYears, loanType, annualInterestRate, startDate, loanTaker);
+        this.carModel = carModel;
+        this.miles = miles;
+        this.typeOfInsurance = typeOfInsurance;
+    }
+    public CarLoan(){
+        super();
+    }
+
     public String getCarModel() {
         return carModel;
     }
@@ -31,25 +41,29 @@ public class CarLoan extends Loan{
         this.typeOfInsurance = typeOfInsurance;
     }
 
-    public CarLoan(double loanAmount, int numberOfYears, LoanType loanType, double annualInterestRate, Date startDate, CustomerInfo loanTaker, String carModel, String miles, InsuranceType typeOfInsurance) {
-        super(loanAmount, numberOfYears, loanType, annualInterestRate, startDate, loanTaker);
-        this.carModel = carModel;
-        this.miles = miles;
-        this.typeOfInsurance = typeOfInsurance;
-    }
+
 
     public CarLoan(double loanAmount, int numberOfYears, LoanType loanType, double annualInterestRate, Date startDate, CustomerInfo loanTaker) {
         super(loanAmount, numberOfYears, loanType, annualInterestRate, startDate, loanTaker);
     }
 
 
+    /**
+     * hardocoded annualInstrerestRate in % for Car loans
+     */
     @Override
-    double getAnnualInterestRate() {
-        return 0;
+    public void getAnnualInterestRate() {
+        super.setAnnualInterestRate(12d);
     }
 
     @Override
     void printLoanInformation() {
+        double loanPayments = super.calculateLoanPayments();
+        CustomerInfo loaner = super.getLoanTaker();
+
+        System.out.println(loaner.getName() +" total Payments are : " + loanPayments+"\n"+
+                            "on " + carModel + " It has driven " +miles +" Miles and " + "he has " + typeOfInsurance +" Insurance");
 
     }
+
 }

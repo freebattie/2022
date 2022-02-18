@@ -10,6 +10,8 @@ public abstract class Loan implements Serializable {
     private double annualInterestRate;
     private Date startDate;
     private CustomerInfo loanTaker;
+    private int loanId;
+    private static int currentId =1;
 
     public Loan(double loanAmount, int numberOfYears, LoanType loanType, double annualInterestRate, Date startDate, CustomerInfo loanTaker) {
         this.loanAmount = loanAmount;
@@ -18,6 +20,13 @@ public abstract class Loan implements Serializable {
         this.annualInterestRate = annualInterestRate;
         this.startDate = startDate;
         this.loanTaker = loanTaker;
+        this.loanId = Loan.currentId++;
+    }
+    public  Loan(){
+
+    }
+    public int getLoanId() {
+        return loanId;
     }
 
     public double getLoanAmount() {
@@ -83,6 +92,6 @@ public abstract class Loan implements Serializable {
         return monthlyInterestRate;
     }
 
-    abstract double getAnnualInterestRate();
+    abstract void getAnnualInterestRate();
     abstract void printLoanInformation();
 }
