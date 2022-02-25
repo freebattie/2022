@@ -1,7 +1,7 @@
 package Tasks.loanTaskBig;
 
 import java.util.Scanner;
-
+// NOT IN USE !!!
 public class BankProxy implements IBankProxy{
     private CustomerInfo activeUser;
     private CustomerInfo coLoaner;

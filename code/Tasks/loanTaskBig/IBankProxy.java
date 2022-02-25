@@ -1,5 +1,5 @@
 package Tasks.loanTaskBig;
-
+// NOT IN USE!!!!
 public interface IBankProxy {
     CustomerInfo createNewCustomer(String name,int age,String ssn);
     void RegisterUser(CustomerInfo user);
