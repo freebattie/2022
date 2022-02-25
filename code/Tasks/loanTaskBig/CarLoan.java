@@ -6,15 +6,32 @@ public class CarLoan extends Loan{
     private String carModel;
     private String miles;
     InsuranceType typeOfInsurance;
+    CustomerProxy customerProxy;
 
-    public CarLoan(double loanAmount, int numberOfYears, LoanType loanType, double annualInterestRate, Date startDate, CustomerInfo loanTaker, String carModel, String miles, InsuranceType typeOfInsurance) {
+    public CarLoan(double loanAmount, int numberOfYears, LoanType loanType, double annualInterestRate,
+                   Date startDate, CustomerInfo loanTaker, String carModel,
+                   String miles, InsuranceType typeOfInsurance, CustomerProxy customerProxy) throws Exception {
         super(loanAmount, numberOfYears, loanType, annualInterestRate, startDate, loanTaker);
         this.carModel = carModel;
         this.miles = miles;
         this.typeOfInsurance = typeOfInsurance;
+        this.customerProxy = customerProxy;
+        this.customerProxy.registerCustomer(super.getLoanTaker());
     }
     public CarLoan(){
         super();
+    }
+
+    public CarLoan(LoanType typeOfLoan) {
+        super.setLoanType(typeOfLoan);
+    }
+
+    public CustomerProxy getCustomerProxy() {
+        return customerProxy;
+    }
+
+    public void setCustomerProxy(CustomerProxy customerProxy) {
+        this.customerProxy = customerProxy;
     }
 
     public String getCarModel() {
@@ -62,7 +79,7 @@ public class CarLoan extends Loan{
         CustomerInfo loaner = super.getLoanTaker();
 
         System.out.println(loaner.getName() +" total Payments are : " + loanPayments+"\n"+
-                            "on " + carModel + " It has driven " +miles +" Miles and " + "he has " + typeOfInsurance +" Insurance");
+                            "on a " + carModel + ", it has driven " +miles +" Miles and " + "he has " + typeOfInsurance +" Insurance");
 
     }
 

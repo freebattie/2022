@@ -10,6 +10,21 @@ public class CustomerInfo {
         this.name = name;
         this.age = age;
     }
+    public CustomerInfo(){
+
+    }
+
+    public void setSsn(String ssn) {
+        this.ssn = ssn;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     public String getSsn() {
         return ssn;

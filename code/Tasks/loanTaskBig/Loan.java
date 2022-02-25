@@ -23,7 +23,7 @@ public abstract class Loan implements Serializable {
         this.loanId = Loan.currentId++;
     }
     public  Loan(){
-
+        this.loanId = Loan.currentId++;
     }
     public int getLoanId() {
         return loanId;
@@ -83,12 +83,12 @@ public abstract class Loan implements Serializable {
     }
 
     private double calculateMonthlyPayment(double monthlyInterestRate) {
-        double monthlyPayment = loanAmount * monthlyInterestRate / (1 -(Math.pow(1 / (1 + monthlyInterestRate), numberOfYears * 12)));
+        double monthlyPayment = this.loanAmount * monthlyInterestRate / (1 -(Math.pow(1 / (1 + monthlyInterestRate), numberOfYears * 12)));
         return monthlyPayment;
     }
 
     private double getMonthlyInterestRate() {
-        double monthlyInterestRate=(annualInterestRate/12)/100;
+        double monthlyInterestRate=(this.annualInterestRate/12)/100;
         return monthlyInterestRate;
     }
 

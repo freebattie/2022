@@ -2,6 +2,7 @@ package Tasks.loanTaskBig;
 
 import LargerTasks.bankLoan.LoanException;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class LoanProxy implements ILoanProxy{
@@ -24,6 +25,7 @@ public class LoanProxy implements ILoanProxy{
 
     @Override
     public void printAllLoans() throws Exception {
+
         for (Loan loan : loans.values()){
             if (loan == null)
                 throw new Tasks.loanTaskBig.LoanException("loan missing");
@@ -33,10 +35,33 @@ public class LoanProxy implements ILoanProxy{
 
     @Override
     public void printLoanbySsn(String ssn) throws Exception {
-        if (loans.containsKey(ssn))
-            loans.get(ssn).printLoanInformation();
-        else
-            throw  new Tasks.loanTaskBig.LoanException("loan was not found in list");
+        ArrayList<Loan> userLoans = getAllLoansBySSN(ssn);
+        for (var loan : userLoans){
+            loan.printLoanInformation();
+        }
 
+
+    }
+
+    private ArrayList<Loan> getAllLoansBySSN(String ssn) throws Exception {
+        ArrayList<Loan> allLoansForCustomer = new ArrayList<>();
+        for (Loan loan : loans.values()){
+            if (loan == null)
+                throw new LoanException("loan missing");
+            if(loan.getLoanTaker().getSsn().equals(ssn)){
+                allLoansForCustomer.add(loan);
+            }
+            if (loan instanceof HouseLoan){
+                if (((HouseLoan)loan).getCoLoaner() != null){
+                    if(((HouseLoan)loan).getCoLoaner().getSsn().equals(ssn)){
+                        allLoansForCustomer.add(loan);
+                    }
+
+                }
+
+            }
+
+        }
+        return allLoansForCustomer;
     }
 }

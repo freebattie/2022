@@ -33,7 +33,25 @@ public class CustomerProxy implements ICustomerProxy{
     public void registerCustomer(CustomerInfo customerInfo) throws Exception {
         if (!customers.containsKey(customerInfo.getSsn()) && isValidSsn(customerInfo.getSsn()))
             customers.put(customerInfo.getSsn(),customerInfo);
-        else
-            throw new LoanException("Customer is Already added" + customerInfo.getName());
+
+    }
+
+    @Override
+    public void printAllCustomers() throws Exception {
+        for (var user :customers.values()){
+            printBorder();
+            printUser(user);
+            printBorder();
+        }
+    }
+
+    private void printUser(CustomerInfo user) {
+        System.out.println("Name: " +user.getName());
+        System.out.println("Age: " +user.getAge());
+        System.out.println("SSN: " +user.getSsn());
+    }
+
+    private void printBorder() {
+        System.out.println("--------------");
     }
 }
