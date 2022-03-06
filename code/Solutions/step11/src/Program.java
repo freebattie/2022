@@ -24,8 +24,7 @@ public class Program {
 
     // Assignment 4
     public Optional<Person> getSamplePerson(String name) {
-        for (Person p :
-                persons) {
+        for (Person p : persons) {
             if (p.getName().equalsIgnoreCase(name)) {
                 return Optional.of(p);
             }
