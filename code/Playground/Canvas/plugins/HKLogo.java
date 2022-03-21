@@ -17,7 +17,8 @@ public class HKLogo extends Window.Canvas.Plugin {
                 124, 104,
                 Window.Canvas.Anchor.LEFT
         );
-
+        canvas.drawCircle(new Point(200,200),10);
+        canvas.drawCircle(10,10,10);
         canvas.onMouseClick(new Rectangle(1, 1, 256, 128), (click) -> {
             HKLogo.counter ++;
 
@@ -25,5 +26,6 @@ public class HKLogo extends Window.Canvas.Plugin {
 
             return true;
         });
+
     }
 }

@@ -20,9 +20,7 @@ public class LoanInfo {
         this.loanAmount = loanAmount;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
+
 
     public void setCustomer(Customer customer) {
         this.customer = customer;

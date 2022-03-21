@@ -50,6 +50,37 @@ public class Program {
         }
         return pers;
     }
+    public int add(int one,int two){
+        return one+two;
+    }
+    public float add(float one,float two){
+        return one+two;
+    }
+    public double add(double one,double two){
+        return one+two;
+    }
+    public <T extends Number> double addT (T one, T two)
+    {
+        return one.doubleValue() + two.doubleValue();
+    }
+
+    public <T> T addT2 (T one, T two)
+    {
+        if (one.getClass() == Integer.class) {
+
+            return (T) (Integer) ((Integer) one + (Integer) two);
+        }
+        else if (one.getClass() == Float.class) {
+
+            return (T) (Float) ((Float) one + (Float) two);
+        }
+        else if (one.getClass() == Double.class) {
+
+            return (T) (Double) ((Double) one + (Double) two);
+        }
+        else
+            throw  new ArithmeticException("only Integer,Float or Double work");
+    }
 
     public void addPerson(Person p) {
         //validate
